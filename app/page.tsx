@@ -4,44 +4,59 @@ import sedans from "@/app/assets/images/icon-sedans.svg";
 import suvs from "@/app/assets/images/icon-suvs.svg";
 import luxury from "@/app/assets/images/icon-luxury.svg";
 import CardComponent from "@/app/components/CardComponent";
+import Badge from "./components/Badge";
 
 const Home = () => {
   return (
-    <Container>
-      <CardWrapper className="bg-bright-orange">
-        <CardComponent type={"bright-orange"} icon={sedans}>
-          <H1>Sedans</H1>
-          <Paragraph>
-            Choose a sedan for its affordability and excellent fuel economy.
-            Ideal for cruising in the city or on your next road trip.
-          </Paragraph>
-        </CardComponent>
-        <CardComponent type={"dark-cyan"} icon={suvs}>
-          <H1>SUVs</H1>
-          <Paragraph>
-            Take an SUV for its spacious interior, power, and versatility.
-            Perfect for your next family vacation and off-road adventures.
-          </Paragraph>
-        </CardComponent>
-        <CardComponent type={"very-dark-cyan"} icon={luxury}>
-          <H1>Luxury</H1>
-          <Paragraph>
-            Cruise in the best car brands without the bloated prices. Enjoy the
-            enhanced comfort of a luxury rental and arrive in style.
-          </Paragraph>
-        </CardComponent>
-      </CardWrapper>
-    </Container>
+    <Div>
+      <Container>
+        <Badge />
+        <CardWrapper className="bg-bright-orange">
+          <CardComponent type={"bright-orange"} icon={sedans}>
+            <H1>Sedans</H1>
+            <Paragraph>
+              Choose a sedan for its affordability and excellent fuel economy.
+              Ideal for cruising in the city or on your next road trip.
+            </Paragraph>
+          </CardComponent>
+          <CardComponent type={"dark-cyan"} icon={suvs}>
+            <H1>SUVs</H1>
+            <Paragraph>
+              Take an SUV for its spacious interior, power, and versatility.
+              Perfect for your next family vacation and off-road adventures.
+            </Paragraph>
+          </CardComponent>
+          <CardComponent type={"very-dark-cyan"} icon={luxury}>
+            <H1>Luxury</H1>
+            <Paragraph>
+              Cruise in the best car brands without the bloated prices. Enjoy
+              the enhanced comfort of a luxury rental and arrive in style.
+            </Paragraph>
+          </CardComponent>
+        </CardWrapper>
+        <Badge />
+      </Container>
+    </Div>
   );
 };
 
-const Container = styled.div`
+const Div = styled.div`
+  display: flex;
   height: 100vh;
+  @media (max-width: 787px) {
+    padding: 2rem;
+  }
+`;
+
+const Container = styled.div`
   max-width: 920px;
+  height: max-content;
   margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const CardWrapper = styled.div`
@@ -53,7 +68,6 @@ const CardWrapper = styled.div`
   overflow: hidden;
   @media (max-width: 787px) {
     flex-direction: column;
-    margin: 2rem;
     overflow: auto;
   }
 `;
@@ -65,7 +79,7 @@ const H1 = styled.h1`
 `;
 
 const Paragraph = styled.p`
-  margin-bottom: 83px; ;
+  margin-bottom: 83px;
 `;
 
 export default Home;
