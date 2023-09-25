@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Div>
       <Container>
-        <Badge />
+        <Badge author={"Ali Mukhtar"} />
         <CardWrapper className="bg-bright-orange">
           <CardComponent type={"bright-orange"} icon={sedans}>
             <H1>Sedans</H1>
@@ -34,7 +34,6 @@ const Home = () => {
             </Paragraph>
           </CardComponent>
         </CardWrapper>
-        <Badge />
       </Container>
     </Div>
   );

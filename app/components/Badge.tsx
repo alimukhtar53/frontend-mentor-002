@@ -2,13 +2,17 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-function Badge() {
+interface Props {
+  author: string;
+}
+
+function Badge({ author }: Props) {
   const myLinkedInProfileURI =
     "https://www.linkedin.com/in/ali-mukhtar-3082518b/";
   return (
     <Pill>
       <Link href={myLinkedInProfileURI} target="_blank">
-        <p>Made by Ali Mukhtar</p>
+        <p>Made by {author}</p>
       </Link>
     </Pill>
   );
