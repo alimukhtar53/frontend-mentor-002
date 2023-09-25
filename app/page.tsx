@@ -1,95 +1,71 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import styled from "styled-components";
+import sedans from "@/app/assets/images/icon-sedans.svg";
+import suvs from "@/app/assets/images/icon-suvs.svg";
+import luxury from "@/app/assets/images/icon-luxury.svg";
+import CardComponent from "@/app/components/CardComponent";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Container>
+      <CardWrapper className="bg-bright-orange">
+        <CardComponent type={"bright-orange"} icon={sedans}>
+          <H1>Sedans</H1>
+          <Paragraph>
+            Choose a sedan for its affordability and excellent fuel economy.
+            Ideal for cruising in the city or on your next road trip.
+          </Paragraph>
+        </CardComponent>
+        <CardComponent type={"dark-cyan"} icon={suvs}>
+          <H1>SUVs</H1>
+          <Paragraph>
+            Take an SUV for its spacious interior, power, and versatility.
+            Perfect for your next family vacation and off-road adventures.
+          </Paragraph>
+        </CardComponent>
+        <CardComponent type={"very-dark-cyan"} icon={luxury}>
+          <H1>Luxury</H1>
+          <Paragraph>
+            Cruise in the best car brands without the bloated prices. Enjoy the
+            enhanced comfort of a luxury rental and arrive in style.
+          </Paragraph>
+        </CardComponent>
+      </CardWrapper>
+    </Container>
+  );
+};
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+const Container = styled.div`
+  height: 100vh;
+  max-width: 920px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+const CardWrapper = styled.div`
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex: 1 1 33%;
+  border-radius: 8px;
+  overflow: hidden;
+  @media (max-width: 787px) {
+    flex-direction: column;
+    margin: 2rem;
+    overflow: auto;
+  }
+`;
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+const H1 = styled.h1`
+  margin-top: 2.34rem;
+  margin-bottom: 1.67rem;
+  text-transform: uppercase;
+`;
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+const Paragraph = styled.p`
+  margin-bottom: 83px; ;
+`;
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;
