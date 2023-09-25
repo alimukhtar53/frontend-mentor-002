@@ -15,15 +15,13 @@ function Badge() {
 }
 
 const Pill = styled.div`
+  background-color: #6366f1;
   position: absolute;
   top: 0;
   right: 0;
   border-radius: 6px;
   margin: 10px -10px 0 0;
   transition: all 0.3s ease;
-  mix-blend-mode: overlay;
-  backdrop-filter: blur(33px);
-  color: rgba(0, 0, 0, 0.8);
 
   &:hover {
     transform: scale(1.1);
