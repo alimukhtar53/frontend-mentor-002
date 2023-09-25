@@ -76,6 +76,7 @@ const H1 = styled.h1`
   margin-top: 2.34rem;
   margin-bottom: 1.67rem;
   text-transform: uppercase;
+  font-size: 40px;
 `;
 
 const Paragraph = styled.p`
