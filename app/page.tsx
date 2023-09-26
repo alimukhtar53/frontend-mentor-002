@@ -60,9 +60,7 @@ const Home = () => {
 const Div = styled.div`
   display: flex;
   height: 100vh;
-  @media (max-width: 787px) {
-    padding: 2rem;
-  }
+  padding: 2rem;
 `;
 
 const Container = styled.div`
