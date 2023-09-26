@@ -7,6 +7,9 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
+  --font-family: "Lexend Deca", sans-serif;
+  --fallback-font: Arial, Helvetica, sans-serif;
+
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -176,7 +179,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  font-family: "Big Shoulders Display", cursive;
+  font-family: "Big Shoulders Display", cursive, var(--fallback-font);
   font-weight: 700;
   color: var(--very-light-gray);
 }
@@ -190,7 +193,7 @@ h6 {
 }
 
 p {
-  font-family: "Lexend Deca", sans-serif;
+  font-family: var(--font-family), var(--fallback-font);
   overflow-wrap: break-word;
   font-weight: 400;
   color: var(--transparent-white);
