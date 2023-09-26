@@ -5,6 +5,7 @@ import styled from "styled-components";
 import sedans from "@/app/assets/images/icon-sedans.svg";
 import suvs from "@/app/assets/images/icon-suvs.svg";
 import luxury from "@/app/assets/images/icon-luxury.svg";
+import Loading from "./components/Loading";
 
 const CardComponent = lazy(() => import("@/app/components/CardComponent"));
 const Badge = lazy(() => import("./components/Badge"));
@@ -18,7 +19,7 @@ const Home = () => {
   return (
     <Div>
       <Container>
-        <Suspense fallback={"loading..."}>
+        <Suspense fallback={<Loading />}>
           {componentsLoaded ? (
             <>
               <Badge author={"Ali Mukhtar"} />
